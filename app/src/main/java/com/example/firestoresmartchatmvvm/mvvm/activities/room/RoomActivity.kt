@@ -1,4 +1,4 @@
-package com.example.firestoresmartchatmvvm.mvvm.activities.lobby
+package com.example.firestoresmartchatmvvm.mvvm.activities.room
 
 import android.os.Bundle
 import com.example.firestoresmartchatmvvm.R
@@ -6,10 +6,10 @@ import com.example.firestoresmartchatmvvm.util.ActivityUtils
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-class LobbyActivity : DaggerAppCompatActivity() {
+class RoomActivity : DaggerAppCompatActivity() {
 
     @Inject
-    lateinit var lobbyFragment: LobbyFragment
+    lateinit var roomFragment: RoomFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +18,7 @@ class LobbyActivity : DaggerAppCompatActivity() {
         var fragment = supportFragmentManager.findFragmentById(R.id.contentFrame)
 
         if (fragment == null) {
-            fragment = lobbyFragment
+            fragment = roomFragment
             ActivityUtils.addFragmentToActivity(
                 supportFragmentManager,
                 fragment,
@@ -27,4 +27,8 @@ class LobbyActivity : DaggerAppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        roomFragment.saveRoomIdToPreferences(null)
+        super.onBackPressed()
+    }
 }

@@ -14,7 +14,8 @@ import dagger.android.support.AndroidSupportInjectionModule
     ActivityBindingModule::class,
     AndroidSupportInjectionModule::class,
     ViewModelModule::class,
-    FirebaseRepositoryModule::class
+    RepositoriesModule::class,
+    ViewStatesModule::class
 ])
 interface AppComponent: AndroidInjector<Application> {
 

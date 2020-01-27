@@ -12,15 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.example.firestoresmartchatmvvm.mvvm.activities.register.RegisterActivity"></activity>
-        <activity android:name="com.example.firestoresmartchatmvvm.mvvm.activities.lobby.LobbyActivity" />
-        <activity android:name="com.example.firestoresmartchatmvvm.mvvm.activities.login.LoginActivity">
+
+        <activity android:name=".mvvm.activities.lobby.LobbyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".mvvm.activities.room.RoomActivity"
+            android:parentActivityName=".mvvm.activities.lobby.LobbyActivity" />
+
+        <activity android:name=".mvvm.activities.register.RegisterActivity" />
+
+        <activity android:name=".mvvm.activities.login.LoginActivity" />
+
     </application>
 
 </manifest>

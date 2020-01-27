@@ -43,9 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:visibility="invisible"
             android:textColor="@android:color/holo_red_dark"
-            android:text="Please enter a room ID"
+            tools:text="Please enter a room ID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button_enter" />

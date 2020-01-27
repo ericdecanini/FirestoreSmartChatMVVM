@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.firestoresmartchatmvvm.injection.ViewModelKey
 import com.example.firestoresmartchatmvvm.injection.scope.AppScoped
 import com.example.firestoresmartchatmvvm.mvvm.ViewModelFactory
+import com.example.firestoresmartchatmvvm.mvvm.activities.lobby.LobbyViewModel
 import com.example.firestoresmartchatmvvm.mvvm.activities.login.LoginViewModel
 import com.example.firestoresmartchatmvvm.mvvm.activities.register.RegisterViewModel
+import com.example.firestoresmartchatmvvm.mvvm.activities.room.RoomViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -27,5 +29,15 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RegisterViewModel::class)
     abstract fun bindRegisterViewModel(viewModel: RegisterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LobbyViewModel::class)
+    abstract fun bindLobbyViewModel(viewModel: LobbyViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RoomViewModel::class)
+    abstract fun bindRoomViewModel(viewModel: RoomViewModel): ViewModel
 
 }
