@@ -6,10 +6,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.*
 import kotlinx.coroutines.tasks.await
 import java.util.*
 
@@ -52,7 +49,7 @@ class FirebaseRepository {
             .add(mapOf(
                 Pair("text", message),
                 Pair("user", user()!!.uid),
-                Pair("timestamp", Timestamp.now())
+                Pair("timestamp", FieldValue.serverTimestamp())
             ))
     }
 
